@@ -15,8 +15,6 @@ const initialObstacleSpeed = 2.8;
 const obstaclesToPassBeforeLevelUp = 5;
 const levelUpSpeedIncrease = 0.165;
 const coinStartPosition = 943;
-const loc = window.location;
-const host = window.location.host;
 const coinCollectSound = new Howl({ src: ['./sounds/coin-collect.mp3'], volume: 0.4 });
 const levelUpSound = new Howl({ src: ['./sounds/level-up.mp3'], volume: 0.4 });
 const crashSound = new Howl({ src: ['./sounds/crash.mp3'], volume: 0.4 });
@@ -227,13 +225,6 @@ function textDisplayedWhileGameIsPlaying() {
     displayInitialsDuringGame();
     displayLevel();
   }
-}
-
-function coinFlip() {
-  var arr = [1, 2, 3];
-  var result = arr[Math.floor(Math.random() * arr.length)];
-
-  return result == 1;
 }
 
 function playMidGameSound() {
