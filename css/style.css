@@ -1,0 +1,170 @@
+@font-face {
+  font-family: flappyPaul;
+  src: url('../fonts/LuloCleanOneBold.otf');
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'flappyPaul', cursive;
+  position: relative;
+  margin: 0;
+}
+
+.initials-wrapper {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.86);
+  height: 480px;
+  width: 320px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.initials-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.initials {
+  font-family: 'flappyPaul', cursive;
+  font-size: 30px;
+  width: 210px;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  outline: 1px solid transparent;
+  border: 1px solid transparent;
+  letter-spacing: 0px;
+}
+
+.initials::-webkit-input-placeholder {
+  font-size: 23px;
+  padding-top: 8px;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.initials:-ms-input-placeholder {
+  font-size: 23px;
+  padding-top: 8px;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.initials::-ms-input-placeholder {
+  font-size: 23px;
+  padding-top: 8px;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.initials::placeholder {
+  font-size: 23px;
+  padding-top: 8px;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.initials-submit {
+  font-family: 'flappyPaul', cursive;
+  font-size: 14px;
+  padding: 11px 19px 7px;
+  margin-top: 25px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.12s linear;
+  -o-transition: 0.12s linear;
+  transition: 0.12s linear;
+}
+
+.initials-submit:hover {
+  background-color: #fff;
+  color: #272727;
+}
+
+.replay {
+  font-size: 3.6em;
+  color: #fff;
+  padding: 15px 30px;
+  position: absolute;
+  top: 48%;
+  right: 50%;
+  transform: translate(50%);
+  background: 0;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  display: none;
+}
+
+.replay img {
+  width: 190px;
+}
+
+canvas {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url('../images/background.png');
+  background-size: contain;
+  background-color: #efefef;
+  border: 1px solid #acacac;
+  margin-top: 5px;
+}
+
+.alert {
+  z-index: 2;
+  position: fixed;
+  background: white;
+  width: 300px;
+  left: calc(50% - 150px);
+  border: 8px solid #2096d0;
+  border-radius: 240px / 140px;
+  padding: 10px 10px 50px;
+  top: 20px;
+  text-align: center;
+}
+
+.alert:before {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  bottom: -40px;
+  right: 100px;
+  width: 50px;
+  height: 50px;
+  border: 10px solid #2096d0;
+  background: #fff;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  display: block;
+}
+
+.alert:after {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  bottom: -60px;
+  right: 50px;
+  width: 25px;
+  height: 25px;
+  border: 10px solid #2096d0;
+  background: #fff;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  display: block;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
