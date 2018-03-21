@@ -32,7 +32,7 @@ function displayTextOnStartScreen() {
   cx.textAlign = 'center';
   cx.font = '18px flappyPaul';
   cx.fillStyle = '#0b4b66';
-  cx.fillText(`High Score: $${highScore}M`, cWidth / 2, 352);
+  cx.fillText(`High Score: $${highScore}`, cWidth / 2, 352);
   cx.restore();
 
   // displays tagline - line 1
@@ -72,7 +72,7 @@ function displayGameRunningScore() {
     cx.textAlign = 'center';
     cx.font = '12px flappyPaul';
     cx.fillStyle = '#666';
-    cx.fillText('Money: $' + score + 'M', cWidth / 2 + 15, 22);
+    cx.fillText('Money: $' + score, cWidth / 2 + 15, 22);
   }
 }
 
@@ -115,7 +115,7 @@ function displayGameOverText(newHighScore) {
 
 function displayGameOverScore() {
   cx.font = '15px flappyPaul';
-  cx.fillText('Money Saved: $' + score + 'M', cWidth / 2, 218);
+  cx.fillText('Money Saved: $' + score, cWidth / 2, 218);
   cx.restore();
 }
 
