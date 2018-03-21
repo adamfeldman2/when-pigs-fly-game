@@ -197,61 +197,6 @@ function incrementScore(amount) {
   };
 }
 
-function openSocket() {
-  let socket_link = host + '/player-socket/' + initials;
-  let tm;
-
-  socket_link = protocol + socket_link;
-
-  socket = new WebSocket(socket_link);
-
-  const onClose = function() {
-    document.body.classList.add('no-scroll');
-    let overlay = document.querySelector('.connection-lost-overlay');
-    let alrt = document.querySelector('.alert');
-    overlay.classList.remove('hidden');
-    alrt.classList.remove('hidden');
-  };
-
-  const ping = function() {
-    let data = {
-      message: 'ping'
-    };
-
-    socket.send(JSON.stringify(data));
-
-    tm = setTimeout(function() {
-      onClose();
-      handleEndGame();
-    }, 2000);
-  };
-
-  const pong = function() {
-    clearTimeout(tm);
-  };
-
-  socket.onopen = function() {
-    setInterval(ping, 5000);
-  };
-
-  socket.onmessage = function(msg) {
-    var data = JSON.parse(msg.data);
-    console.log(data);
-    switch (data.message) {
-      case 'game_over':
-        console.log(msg);
-        break;
-      case 'pong':
-        pong();
-        break;
-    }
-  };
-
-  socket.onclose = function() {
-    onClose();
-  };
-}
-
 function getUserInitials() {
   if (localStorage.getItem('initials')) {
     initials = localStorage.getItem('initials');
